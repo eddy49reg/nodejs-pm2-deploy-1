@@ -31,7 +31,7 @@ module.exports = {
       path: DEPLOY_PATH,
       "pre-deploy-local": `scp -i ${DEPLOY_SSH_KEY} ./.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend/`,
       "post-deploy":
-        "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && cd backend && npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production",
+        'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && cd backend && npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 };
